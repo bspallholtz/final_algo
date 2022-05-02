@@ -1,0 +1,2628 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" wf-loading>
+    <head>
+        
+    
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/assets/images/favicon.png">
+
+<script>
+    window.newrelicAttributes = {
+        accountId: "1796917",
+        trustKey: "1796917",
+        agentId: "149134891",
+        licenseKey: "f701a6c63c",
+        applicationId: "149134891"
+    };
+</script>
+<script src="/newrelic.js"></script>
+
+
+<!-- Compliant Google Optimize -->
+<script>
+        (() => {
+            const getPrefCookie = () => {
+                const prefCookie = document.cookie.match('(^|;)\\s*notice_preferences\\s*=\\s*([^;]+)');
+
+                return prefCookie ? prefCookie.pop() : null;
+            };
+
+            const hasOptedIn = (prefCookie) => {
+                return prefCookie.match(/1:|2:|100/);
+            }
+
+            const appendOptimize = () => {
+                const head = document.getElementsByTagName('head')[0];
+                const script = document.createElement('script');
+
+                script.src = 'https://www.googleoptimize.com/optimize.js?id=GTM-M6BQF2W';
+                head.append(script);
+            };
+
+            const prefCookie = getPrefCookie();
+
+            if (prefCookie === null) {
+                window.addEventListener('load', () => {
+                    document.querySelector('#truste-consent-button').addEventListener("click", () => {
+                        setTimeout(() => {
+                            // delay to allow cookie to be read
+                            const setCookie = getPrefCookie();
+                            // trigger Optimize
+                            if (hasOptedIn(setCookie)) {
+                                appendOptimize();
+                            }
+                        }, 1000);
+                    }, false);
+                })
+            } else if (hasOptedIn(prefCookie)) {
+                appendOptimize();
+            }
+        })();
+</script>
+    <!-- End Compliant Google Optimize -->
+
+<!-- Google Tag Manager -->
+<script>
+    (function(w, d, s, l) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+        });
+
+        var f = d.getElementsByTagName(s)[0];
+        var j = d.createElement(s);
+        var dl = l !== 'dataLayer' ? '&l=' + l : '';
+
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-TG32RCX' + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer');
+</script>
+<!-- End Google Tag Manager -->
+
+
+
+<style>
+    [unresolved] {
+        visibility: hidden !important;
+    }
+</style>
+
+
+<noscript>
+    <style>
+        [unresolved] {
+            visibility: visible !important;
+        }
+    </style>
+</noscript>
+
+<style>
+    body {
+        margin: 0;
+    }
+
+    .image img {
+        max-width: 100%;
+    }
+</style>
+
+
+<script>
+    
+    if (!CSS.supports('width', 'calc((var(--test))')) {
+        window.ShadyCSS = {
+            shimcssproperties: true
+        };
+    }
+
+    document.addEventListener('nds.typeKit.active', function() {
+        document.querySelector('html').removeAttribute('wf-loading');
+    });
+</script>
+
+<script src="//unpkg.com/@webcomponents/webcomponentsjs@2.2.7/webcomponents-loader.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+<script src="//w.soundcloud.com/player/api.js"></script>
+
+
+
+
+
+
+<script>
+    window.nds = window.nds || {};
+    window.nds.componentUrlPrefix = '//pl.ea.com/release/4.28.0/elements/ea-elements.min.js'.substring(0, '//pl.ea.com/release/4.28.0/elements/ea-elements.min.js'.lastIndexOf('/') + 1);
+    window.nds.contentfulUrl = 'https://contentful-proxy.juno.ea.com/graphql';
+    window.nds.salUrl = 'https://service-aggregation-layer.juno.ea.com/graphql';
+    window.nds.useApq = true;
+</script>
+<script type="module" src="//pl.ea.com/release/4.28.0/elements/ea-elements.min.js"></script>
+<script nomodule defer src="//pl.ea.com/release/4.28.0/elements/ea-elements.min.js"></script>
+
+
+
+    
+        
+            
+        
+    
+
+<style>
+    @font-face {
+    font-family: 'ElectronicArtsDisplay';
+    src: url(/assets/fonts/display/ElectronicArtsDisplay-Regular.woff2) format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ElectronicArtsDisplay';
+    src: url(/assets/fonts/display/ElectronicArtsDisplay-Bold.woff2) format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ElectronicArtsText';
+    src: url(/assets/fonts/text/ElectronicArtsText-Light.woff2) format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ElectronicArtsText';
+    src: url(/assets/fonts/text/ElectronicArtsText-LightItalic.woff2) format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'ElectronicArtsText';
+    src: url(/assets/fonts/text/ElectronicArtsText-Regular.woff2) format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ElectronicArtsText';
+    src: url(/assets/fonts/text/ElectronicArtsText-Italic.woff2) format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'ElectronicArtsText';
+    src: url(/assets/fonts/text/ElectronicArtsText-Bold.woff2) format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ElectronicArtsText';
+    src: url(/assets/fonts/text/ElectronicArtsText-BoldItalic.woff2) format('woff');
+    font-weight: 600;
+    font-style: italic;
+}
+
+</style>
+
+
+    <title>NHL 21 - Players - EASPORTS Official Site</title>
+    
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="NHL 21 - Players - EASPORTS Official Site">
+<meta property="og:description" content="Players">
+<meta property="og:url" content="https://www.ea.com/games/nhl/nhl-21/pro-clubs/players">
+<meta property="og:site_name" content="Electronic Arts Inc.">
+
+    <meta property="og:image" content="https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-21/images/2020/07/eas-nhl21-primary-stacked-black.png.adapt.crop191x100.1200w.png">
+
+
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="628">
+
+
+<meta name="description" content="Players">
+<meta name="author" content="Electronic Arts">
+<meta property="article:modified_time" content="2021-03-29T17:01:03Z">
+<meta property="article:published_time" content="2021-03-29T17:01:03Z">
+
+
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@ea">
+<meta name="twitter:title" content="NHL 21 - Players - EASPORTS Official Site">
+<meta name="twitter:description" content="Players">
+
+    <meta name="twitter:image" content="https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-21/images/2020/07/eas-nhl21-primary-stacked-black.png.adapt.crop16x9.1023w.png">
+
+<meta name="twitter:creator" content="@ea">
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+     
+"image": {
+    "@type": "ImageObject",
+    "url": "https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-21/images/2020/07/eas-nhl21-primary-stacked-black.png.adapt.crop191x100.1200w.png"
+},
+ 
+    "author": {
+      "@type": "Organization",
+      "name": "Electronic Arts",
+      "sameAs": "https://en.wikipedia.org/wiki/Electronic_Arts"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Electronic Arts",
+        "sameAs": "https://en.wikipedia.org/wiki/Electronic_Arts",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://media.contentapi.ea.com/content/dam/ea/EA_logo.png",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "inLanguage": "en",
+    "description": "Players",
+    "datePublished": "2021-03-29T17:01:03Z",
+    "dateModified": "2021-03-29T17:01:03Z",
+    "headline": "NHL 21 - Players - EASPORTS Official Site",
+    "url": "https://www.ea.com/games/nhl/nhl-21/pro-clubs/players"
+}
+</script>
+
+
+
+    </head>
+    <body unresolved>
+        
+    
+
+
+<custom-style><style include="ea-shared-styles-base-common"></style></custom-style>
+<custom-style><style include="ea-shared-styles-base-headings"></style></custom-style>
+<custom-style><style include="ea-shared-styles-base-lists"></style></custom-style>
+<custom-style><style include="ea-shared-styles-base-links"></style></custom-style>
+<custom-style><style include="ea-shared-styles-base-images"></style></custom-style>
+<custom-style><style include="ea-shared-styles-typography-headings"></style></custom-style>
+<custom-style><style include="ea-shared-styles-typography-paragraphs"></style></custom-style>
+<custom-style><style include="ea-shared-styles-typography-labels"></style></custom-style>
+
+
+    
+        
+            <custom-style>
+                <style>
+                    html {
+                        
+                            --ea-theme-primary-font-family: "seravek-web", sans-serif;
+                        
+                            --ea-theme-secondary-font-family: "oswald", sans-serif;
+                        
+                            --ea-theme-header-font-family: var(--ea-theme-secondary-font-family);
+                        
+                            --ea-theme-header-font-weight-normal: normal;
+                        
+                            --ea-theme-header-font-weight-bold: 500;
+                        
+                            --ea-theme-header-letter-spacing: normal;
+                        
+                            --ea-theme-body-font-family: var(--ea-theme-primary-font-family);
+                        
+                            --ea-theme-body-font-weight-light: lighter;
+                        
+                            --ea-theme-body-font-weight-normal: normal;
+                        
+                            --ea-theme-body-font-weight-bold: bolder;
+                        
+                            --ea-theme-body-letter-spacing: normal;
+                        
+                            --ea-theme-typographic-headings-font-family: var(--ea-theme-secondary-font-family);
+                        
+                            --ea-theme-l1-font-weight: 500;
+                        
+                            --ea-theme-l2-font-weight: 500;
+                        
+                            --ea-theme-l3-font-weight: 500;
+                        
+                            --ea-theme-l4-font-weight: 500;
+                        
+                            --ea-theme-h1-font-weight: 200;
+                        
+                            --ea-theme-h2-font-weight: 300;
+                        
+                            --ea-theme-h3-font-weight: 300;
+                        
+                            --ea-theme-h4-font-weight: 300;
+                        
+                            --ea-theme-h5-font-weight: 300;
+                        
+                            --ea-theme-h6-font-weight: 300;
+                        
+                            --ea-theme-d1-font-weight: 500;
+                        
+                            --ea-theme-d2-font-weight: 500;
+                        
+                            --ea-theme-d3-font-weight: 500;
+                        
+                            --ea-theme-d4-font-weight: 500;
+                        
+                            --ea-theme-d5-font-weight: 500;
+                        
+                            --ea-theme-d6-font-weight: 500;
+                        
+                            --ea-text-case: uppercase;
+                        
+                            --ea-theme-color: #E2F71F;
+                        
+                            --ea-theme-tabs-background-color: transparent;
+                        
+                            --ea-theme-tabs-indicator-color: #E2F71F;
+                        
+                            --nintendo-brand-color: #161616;
+                        
+                            --ea-theme-dark-gradient: #ff5d47;
+                        
+                            --ea-theme-light-gradient: #ff5d47;
+                        
+                            --ea-theme-body-font-size-desktop: 19px;
+                        
+                            --ea-theme-body-font-size-tablet-landscape: 18px;
+                        
+                            --ea-theme-d4-font-size-mobile: 40px;
+                        
+                            --ea-theme-tabs-selected-type: #000;
+                        
+                            --ea-theme-tabs-selected-state: rgba(255, 255, 255, 0);
+                        
+                            --ea-theme-tabs-accent-elements: transparent;
+                        
+                            --ea-theme-tabs-unselected-type: rgba(0, 0, 0, 0.7);
+                        
+                    }
+                </style>
+            </custom-style>
+        
+    
+
+
+<ea-elements-loader elements="ea-network-nav, ea-player, ea-type-kit">
+</ea-elements-loader>
+
+
+    <ea-network-nav
+        unresolved
+        userData="/user-data"
+        content="//nds-network-nav.ea.com/en-us/network-nav"
+        login-url="/login"
+        logout-url="/logout"
+            
+                
+                    
+                        hide-logo
+                    
+                
+            
+    ></ea-network-nav>
+
+
+
+
+
+
+
+    
+        
+            
+                
+
+    
+<ea-elements-loader elements="ea-local-nav, ea-link">
+</ea-elements-loader>
+    
+        <ea-local-nav
+    
+    
+    
+        home-text = " "
+        home-tooltip = "EA SPORTS NHL 21"
+        home-link = "/games/nhl/nhl-21"
+    
+    
+        logo-image="https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-21/common/nhl21-white-logo-horizontal.svg"
+    
+    
+    
+        theme = "light"
+    
+    
+        shelf-type = "band"
+    
+    
+        open-drawer-text = "Menu"
+    
+    
+        close-drawer-text = "Close"
+    
+    
+        
+            open-drawer-tooltip = "Open Menu"
+        
+        
+            close-drawer-tooltip = "Close Menu"
+        
+        
+        
+        
+            hide-hamburger-on-desktop
+        
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    unresolved
+>
+    
+
+    
+
+    
+        <a title="EA SPORTS NHL 21" href="/games/nhl/nhl-21">
+             
+            
+                <img
+                    src="https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-21/common/nhl21-white-logo-horizontal.svg"
+                    
+                />
+            
+        </a>
+    
+
+    
+        
+            
+                <ea-link
+                    slot="local-nav-shelf-link"
+                    class="eapl-local-nav__shelf-link"
+                    text-color="dark"
+                    link-href="/games/nhl/nhl-21/cover-athlete"
+                    link-title="COVER ATHLETE"
+                    link-text="COVER ATHLETE"
+                    unresolved
+                >
+                    <a href="/games/nhl/nhl-21/cover-athlete">COVER ATHLETE</a>
+                </ea-link>
+            
+        
+    
+        
+            
+<ea-elements-loader elements="ea-local-nav-shelf-sub-nav">
+</ea-elements-loader>
+<ea-local-nav-shelf-sub-nav
+    slot="local-nav-shelf-link"
+    toggle-text="HUT"
+    theme="light"
+    type="simple"
+    unresolved
+>
+    
+<ea-elements-loader elements="ea-local-nav-shelf-sub-nav-section">
+</ea-elements-loader>
+<ea-local-nav-shelf-sub-nav-section
+    title-text=" "
+    slot="sub-nav-section"
+    unresolved
+>
+    
+<ea-elements-loader elements="ea-local-nav-shelf-sub-nav-section-link">
+</ea-elements-loader>
+<ea-local-nav-shelf-sub-nav-section-link
+    slot="sub-nav-section-link"
+    link-text="HUT Overview"
+    link-href="/games/nhl/nhl-21/hut-overview"
+    link-target="_self"
+    
+    unresolved
+>
+    <a href="/games/nhl/nhl-21/hut-overview">HUT Overview</a>
+</ea-local-nav-shelf-sub-nav-section-link>
+
+<ea-elements-loader elements="ea-local-nav-shelf-sub-nav-section-link">
+</ea-elements-loader>
+<ea-local-nav-shelf-sub-nav-section-link
+    slot="sub-nav-section-link"
+    link-text="HUT All-Stars"
+    link-href="/games/nhl/nhl-21/hut-all-stars"
+    link-target="_self"
+    
+    unresolved
+>
+    <a href="/games/nhl/nhl-21/hut-all-stars">HUT All-Stars</a>
+</ea-local-nav-shelf-sub-nav-section-link>
+
+<ea-elements-loader elements="ea-local-nav-shelf-sub-nav-section-link">
+</ea-elements-loader>
+<ea-local-nav-shelf-sub-nav-section-link
+    slot="sub-nav-section-link"
+    link-text="HUT Rush"
+    link-href="/games/nhl/nhl-21/hut-rush"
+    link-target="_self"
+    
+    unresolved
+>
+    <a href="/games/nhl/nhl-21/hut-rush">HUT Rush</a>
+</ea-local-nav-shelf-sub-nav-section-link>
+
+</ea-local-nav-shelf-sub-nav-section>
+
+</ea-local-nav-shelf-sub-nav>
+
+        
+    
+        
+            
+                <ea-link
+                    slot="local-nav-shelf-link"
+                    class="eapl-local-nav__shelf-link"
+                    text-color="dark"
+                    link-href="/games/nhl/nhl-21/top-50"
+                    link-title="TOP 50"
+                    link-text="TOP 50"
+                    unresolved
+                >
+                    <a href="/games/nhl/nhl-21/top-50">TOP 50</a>
+                </ea-link>
+            
+        
+    
+        
+            
+<ea-elements-loader elements="ea-local-nav-shelf-sub-nav">
+</ea-elements-loader>
+<ea-local-nav-shelf-sub-nav
+    slot="local-nav-shelf-link"
+    toggle-text="FEATURES"
+    theme="light"
+    type="simple"
+    unresolved
+>
+    
+<ea-elements-loader elements="ea-local-nav-shelf-sub-nav-section">
+</ea-elements-loader>
+<ea-local-nav-shelf-sub-nav-section
+    title-text=" "
+    slot="sub-nav-section"
+    unresolved
+>
+    
+<ea-elements-loader elements="ea-local-nav-shelf-sub-nav-section-link">
+</ea-elements-loader>
+<ea-local-nav-shelf-sub-nav-section-link
+    slot="sub-nav-section-link"
+    link-text="Past Meets Present"
+    link-href="/games/nhl/nhl-21/past-meets-present"
+    link-target="_self"
+    
+    unresolved
+>
+    <a href="/games/nhl/nhl-21/past-meets-present">Past Meets Present</a>
+</ea-local-nav-shelf-sub-nav-section-link>
+
+<ea-elements-loader elements="ea-local-nav-shelf-sub-nav-section-link">
+</ea-elements-loader>
+<ea-local-nav-shelf-sub-nav-section-link
+    slot="sub-nav-section-link"
+    link-text="Team of the Year"
+    link-href="/games/nhl/nhl-21/team-of-the-year"
+    link-target="_self"
+    
+    unresolved
+>
+    <a href="/games/nhl/nhl-21/team-of-the-year">Team of the Year</a>
+</ea-local-nav-shelf-sub-nav-section-link>
+
+<ea-elements-loader elements="ea-local-nav-shelf-sub-nav-section-link">
+</ea-elements-loader>
+<ea-local-nav-shelf-sub-nav-section-link
+    slot="sub-nav-section-link"
+    link-text="Gameplay"
+    link-href="/games/nhl/nhl-21/gameplay"
+    link-target="_self"
+    
+    unresolved
+>
+    <a href="/games/nhl/nhl-21/gameplay">Gameplay</a>
+</ea-local-nav-shelf-sub-nav-section-link>
+
+<ea-elements-loader elements="ea-local-nav-shelf-sub-nav-section-link">
+</ea-elements-loader>
+<ea-local-nav-shelf-sub-nav-section-link
+    slot="sub-nav-section-link"
+    link-text="Be A Pro"
+    link-href="/games/nhl/nhl-21/be-a-pro"
+    link-target="_self"
+    
+    unresolved
+>
+    <a href="/games/nhl/nhl-21/be-a-pro">Be A Pro</a>
+</ea-local-nav-shelf-sub-nav-section-link>
+
+<ea-elements-loader elements="ea-local-nav-shelf-sub-nav-section-link">
+</ea-elements-loader>
+<ea-local-nav-shelf-sub-nav-section-link
+    slot="sub-nav-section-link"
+    link-text="Pro Clubs"
+    link-href="/games/nhl/nhl-21/pro-clubs"
+    link-target="_self"
+    
+    unresolved
+>
+    <a href="/methodology">Method</a>
+</ea-local-nav-shelf-sub-nav-section-link>
+
+<ea-elements-loader elements="ea-local-nav-shelf-sub-nav-section-link">
+</ea-elements-loader>
+<ea-local-nav-shelf-sub-nav-section-link
+    slot="sub-nav-section-link"
+    link-text="Accessibility"
+    link-href="/able/resources/nhl/nhl-21"
+    link-target="_blank"
+    
+    unresolved
+>
+    <a href="/able/resources/nhl/nhl-21">Accessibility</a>
+</ea-local-nav-shelf-sub-nav-section-link>
+
+</ea-local-nav-shelf-sub-nav-section>
+
+</ea-local-nav-shelf-sub-nav>
+
+        
+    
+        
+            
+                <ea-link
+                    slot="local-nav-shelf-link"
+                    class="eapl-local-nav__shelf-link"
+                    text-color="dark"
+                    link-href="/games/nhl/nhl-21/news"
+                    link-title="NEWS"
+                    link-text="NEWS"
+                    unresolved
+                >
+                    <a href="/games/nhl/nhl-21/news">NEWS</a>
+                </ea-link>
+            
+        
+    
+
+    
+        
+
+        
+            
+                
+
+    <ea-elements-loader elements="ea-link">
+    </ea-elements-loader>
+    <ea-link
+        
+            slot="local-nav-drawer-link"
+        
+        class="eapl-local-nav__drawer-link"
+        link-href="/games/nhl/nhl-21/cover-athlete"
+        link-title="COVER ATHLETE"
+        link-text="COVER ATHLETE"
+        text-color="dark"
+
+        
+        
+        
+        unresolved
+    >
+        <a href="/games/nhl/nhl-21/cover-athlete">COVER ATHLETE</a>
+    </ea-link>
+
+
+            
+                
+
+    <ea-elements-loader elements="ea-local-nav-drawer-sub-nav">
+    </ea-elements-loader>
+        
+            <ea-local-nav-drawer-sub-nav
+        
+        
+            slot="local-nav-drawer-link"
+        
+        toggle-text="HUT"
+        toggle-tooltip="NHL 21 HUT"
+        theme="light"
+
+        
+            type="standard"
+        
+        
+        
+        
+        unresolved
+    >
+        
+            
+
+    <ea-elements-loader elements="ea-link">
+    </ea-elements-loader>
+    <ea-link
+        slot="local-nav-drawer-sub-link"
+        class="eapl-local-nav__drawer-sub-link"
+        link-href="/games/nhl/nhl-21/hut-overview"
+        link-title="HUT Overview"
+        link-text="HUT Overview"
+        text-color="dark"
+        unresolved
+    >
+        <a href="/games/nhl/nhl-21/hut-overview">HUT Overview</a>
+    </ea-link>
+
+
+        
+            
+
+    <ea-elements-loader elements="ea-link">
+    </ea-elements-loader>
+    <ea-link
+        slot="local-nav-drawer-sub-link"
+        class="eapl-local-nav__drawer-sub-link"
+        link-href="/games/nhl/nhl-21/hut-all-stars"
+        link-title="HUT All-Stars"
+        link-text="HUT All-Stars"
+        text-color="dark"
+        unresolved
+    >
+        <a href="/games/nhl/nhl-21/hut-all-stars">HUT All-Stars</a>
+    </ea-link>
+
+
+        
+            
+
+    <ea-elements-loader elements="ea-link">
+    </ea-elements-loader>
+    <ea-link
+        slot="local-nav-drawer-sub-link"
+        class="eapl-local-nav__drawer-sub-link"
+        link-href="/games/nhl/nhl-21/hut-rush"
+        link-title="HUT Rush"
+        link-text="HUT Rush"
+        text-color="dark"
+        unresolved
+    >
+        <a href="/games/nhl/nhl-21/hut-rush">HUT Rush</a>
+    </ea-link>
+
+
+        
+    
+        </ea-local-nav-drawer-sub-nav>
+    
+
+
+            
+                
+
+    <ea-elements-loader elements="ea-link">
+    </ea-elements-loader>
+    <ea-link
+        
+            slot="local-nav-drawer-link"
+        
+        class="eapl-local-nav__drawer-link"
+        link-href="/games/nhl/nhl-21/top-50"
+        link-title="TOP 50"
+        link-text="TOP 50"
+        text-color="dark"
+
+        
+        
+        
+        unresolved
+    >
+        <a href="/games/nhl/nhl-21/top-50">TOP 50</a>
+    </ea-link>
+
+
+            
+                
+
+    <ea-elements-loader elements="ea-local-nav-drawer-sub-nav">
+    </ea-elements-loader>
+        
+            <ea-local-nav-drawer-sub-nav
+        
+        
+            slot="local-nav-drawer-link"
+        
+        toggle-text="FEATURES"
+        toggle-tooltip="NHL 21 Features"
+        theme="light"
+
+        
+            type="standard"
+        
+        
+        
+        
+        unresolved
+    >
+        
+            
+
+    <ea-elements-loader elements="ea-link">
+    </ea-elements-loader>
+    <ea-link
+        slot="local-nav-drawer-sub-link"
+        class="eapl-local-nav__drawer-sub-link"
+        link-href="/games/nhl/nhl-21/past-meets-present"
+        link-title="Past Meets Present"
+        link-text="Past Meets Present"
+        text-color="dark"
+        unresolved
+    >
+        <a href="/games/nhl/nhl-21/past-meets-present">Past Meets Present</a>
+    </ea-link>
+
+
+        
+            
+
+    <ea-elements-loader elements="ea-link">
+    </ea-elements-loader>
+    <ea-link
+        slot="local-nav-drawer-sub-link"
+        class="eapl-local-nav__drawer-sub-link"
+        link-href="/games/nhl/nhl-21/team-of-the-year"
+        link-title="Team of the Year"
+        link-text="Team of the Year"
+        text-color="dark"
+        unresolved
+    >
+        <a href="/games/nhl/nhl-21/team-of-the-year">Team of the Year</a>
+    </ea-link>
+
+
+        
+            
+
+    <ea-elements-loader elements="ea-link">
+    </ea-elements-loader>
+    <ea-link
+        slot="local-nav-drawer-sub-link"
+        class="eapl-local-nav__drawer-sub-link"
+        link-href="/games/nhl/nhl-21/gameplay"
+        link-title="Gameplay"
+        link-text="Gameplay"
+        text-color="dark"
+        unresolved
+    >
+        <a href="/games/nhl/nhl-21/gameplay">Gameplay</a>
+    </ea-link>
+
+
+        
+            
+
+    <ea-elements-loader elements="ea-link">
+    </ea-elements-loader>
+    <ea-link
+        slot="local-nav-drawer-sub-link"
+        class="eapl-local-nav__drawer-sub-link"
+        link-href="/games/nhl/nhl-21/be-a-pro"
+        link-title="Be A Pro"
+        link-text="Be A Pro"
+        text-color="dark"
+        unresolved
+    >
+        <a href="/games/nhl/nhl-21/be-a-pro">Be A Pro</a>
+    </ea-link>
+
+
+        
+            
+
+    <ea-elements-loader elements="ea-link">
+    </ea-elements-loader>
+    <ea-link
+        slot="local-nav-drawer-sub-link"
+        class="eapl-local-nav__drawer-sub-link"
+        link-href="/games/nhl/nhl-21/pro-clubs"
+        link-title="Pro Clubs"
+        link-text="Pro Clubs"
+        text-color="dark"
+        unresolved
+    >
+        <a href="/games/nhl/nhl-21/pro-clubs">Pro Clubs</a>
+    </ea-link>
+
+
+        
+            
+
+    <ea-elements-loader elements="ea-link">
+    </ea-elements-loader>
+    <ea-link
+        slot="local-nav-drawer-sub-link"
+        class="eapl-local-nav__drawer-sub-link"
+        link-href="/able/resources/nhl/nhl-21"
+        link-title="Accessibility"
+        link-text="Accessibility"
+        text-color="dark"
+        unresolved
+    >
+        <a href="/able/resources/nhl/nhl-21">Accessibility</a>
+    </ea-link>
+
+
+        
+    
+        </ea-local-nav-drawer-sub-nav>
+    
+
+
+            
+                
+
+    <ea-elements-loader elements="ea-link">
+    </ea-elements-loader>
+    <ea-link
+        
+            slot="local-nav-drawer-link"
+        
+        class="eapl-local-nav__drawer-link"
+        link-href="/games/nhl/nhl-21/news"
+        link-title="News"
+        link-text="News"
+        text-color="dark"
+
+        
+        
+        
+        unresolved
+    >
+        <a href="/games/nhl/nhl-21/news">News</a>
+    </ea-link>
+
+
+            
+                
+
+    <ea-elements-loader elements="ea-local-nav-drawer-sub-nav">
+    </ea-elements-loader>
+        
+            <ea-local-nav-drawer-sub-nav
+        
+        
+            slot="local-nav-drawer-link"
+        
+        toggle-text="Buy Now"
+        toggle-tooltip="Buy Now"
+        theme="light"
+
+        
+        
+        
+        
+        unresolved
+    >
+        
+            
+
+    <ea-elements-loader elements="ea-link">
+    </ea-elements-loader>
+    <ea-link
+        slot="local-nav-drawer-sub-link"
+        class="eapl-local-nav__drawer-sub-link"
+        link-href="https://smarturl.it/nhl-21-standard-ps4"
+        link-title="PS4"
+        link-text="PS4"
+        text-color="dark"
+        unresolved
+    >
+        <a href="https://smarturl.it/nhl-21-standard-ps4">PS4</a>
+    </ea-link>
+
+
+        
+            
+
+    <ea-elements-loader elements="ea-link">
+    </ea-elements-loader>
+    <ea-link
+        slot="local-nav-drawer-sub-link"
+        class="eapl-local-nav__drawer-sub-link"
+        link-href="https://smarturl.it/nhl-21-standard-xbox"
+        link-title="Xbox One"
+        link-text="Xbox One"
+        text-color="dark"
+        unresolved
+    >
+        <a href="https://smarturl.it/nhl-21-standard-xbox">Xbox One</a>
+    </ea-link>
+
+
+        
+    
+        </ea-local-nav-drawer-sub-nav>
+    
+
+
+            
+        
+
+        
+    
+
+    
+        
+
+    <ea-elements-loader elements="ea-cta-dropdown">
+    </ea-elements-loader>
+    <ea-cta-dropdown
+        slot="cta-dropdown"
+        theme="light"
+        cta-title-text="Buy Now"
+        cta-link=" "
+        border-color="brand"
+        fill-color="brand"
+        text-color="dark"
+
+        
+        
+        
+        unresolved
+    >
+        
+            <ea-container>
+                
+<ea-elements-loader elements="ea-cta">
+</ea-elements-loader>
+<ea-cta
+    
+        slot="cta"
+    
+    
+        type="standard"
+    
+    
+        link-url="https://smarturl.it/nhl-21-standard-ps4"
+    
+    
+    
+        link-text="PS4"
+    
+    
+        icon="none"
+    
+    
+    
+        fill-color="none"
+    
+    
+        text-color="light"
+    
+    
+        stroke-color="light"
+    
+    
+        target="_self"
+    
+    
+    
+    
+    
+        intent="buy"
+    
+    
+    
+    
+        emphasis="primary"
+    
+    
+    
+    unresolved
+>
+    <a
+        
+            href="https://smarturl.it/nhl-21-standard-ps4"
+        
+        
+    >
+        
+            PS4
+        
+    </a>
+</ea-cta>
+
+            </ea-container>
+        
+            <ea-container>
+                
+<ea-elements-loader elements="ea-cta">
+</ea-elements-loader>
+<ea-cta
+    
+        slot="cta"
+    
+    
+        type="standard"
+    
+    
+        link-url="https://smarturl.it/nhl-21-standard-xbox"
+    
+    
+    
+        link-text="Xbox One"
+    
+    
+        icon="none"
+    
+    
+    
+        fill-color="none"
+    
+    
+        text-color="light"
+    
+    
+        stroke-color="light"
+    
+    
+        target="_self"
+    
+    
+    
+    
+    
+        intent="buy"
+    
+    
+    
+    
+        emphasis="primary"
+    
+    
+    
+    unresolved
+>
+    <a
+        
+            href="https://smarturl.it/nhl-21-standard-xbox"
+        
+        
+    >
+        
+            Xbox One
+        
+    </a>
+</ea-cta>
+
+            </ea-container>
+        
+
+        
+    </ea-cta-dropdown>
+
+
+        
+    
+
+    </ea-local-nav>
+
+
+
+
+            
+        
+    
+
+
+
+
+    
+        
+            
+                
+<ea-elements-loader elements="ea-spacer">
+</ea-elements-loader>
+<ea-spacer
+    unresolved
+    
+        smallest="96px"
+    
+    
+        small="96px"
+    
+    
+        medium="96px"
+    
+    
+        large="96px"
+    
+    
+        largest="100px"
+    
+>
+</ea-spacer>
+
+            
+                
+
+    
+<ea-elements-loader elements="ea-section">
+</ea-elements-loader>
+<ea-section
+    unresolved
+    slot="section"
+    
+        animations-on-mobile
+    
+    
+        type="full-bleed"
+    
+    
+        layout="100"
+    
+    
+        background-color="none"
+    
+    
+        background-overflow="hidden"
+    
+    
+        spacing-top="none"
+    
+    
+        spacing-bottom="none"
+    
+    
+    
+    
+        background-image-smallest="https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-22/common/nhl22-section-bg-pcc-xl.jpg.adapt.320w.jpg"
+        background-image-small="https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-22/common/nhl22-section-bg-pcc-xl.jpg.adapt.768w.jpg"
+        background-image-medium="https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-22/common/nhl22-section-bg-pcc-xl.jpg.adapt.1024w.jpg"
+        background-image-large="https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-22/common/nhl22-section-bg-pcc-xl.jpg.adapt.1456w.jpg"
+        background-image-largest="https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-22/common/nhl22-section-bg-pcc-xl.jpg.adapt.1920w.jpg"
+        image-tooltip=""
+    
+    
+>
+    
+        <img
+            src="https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-22/common/nhl22-section-bg-pcc-xl.jpg.adapt.320w.jpg"
+            alt=""
+            srcset="https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-22/common/nhl22-section-bg-pcc-xl.jpg.adapt.320w.jpg 320w, https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-22/common/nhl22-section-bg-pcc-xl.jpg.adapt.768w.jpg 768w, https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-22/common/nhl22-section-bg-pcc-xl.jpg.adapt.1024w.jpg 1024w, https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-22/common/nhl22-section-bg-pcc-xl.jpg.adapt.1456w.jpg 1320w, https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-22/common/nhl22-section-bg-pcc-xl.jpg.adapt.1920w.jpg 1456w"
+        />
+    
+    
+
+
+<ea-section-column
+    slot="section-column"
+    
+        indent-left=""
+    
+    
+        indent-right=""
+    
+    
+        text-align="left"
+    
+    
+    
+>
+    
+<ea-elements-loader elements="ea-product-conversion">
+</ea-elements-loader>
+<ea-product-conversion
+    unresolved
+    
+        text-color="dark"
+    
+    
+        background-color="none"
+    
+    
+        title-text="Discover stocks the algo picks"
+    
+    
+        spacing-top="medium"
+    
+    
+        spacing-bottom="medium"
+    
+>
+    
+        
+<ea-elements-loader elements="ea-cta">
+</ea-elements-loader>
+<ea-cta
+    
+        slot="cta"
+    
+    
+        type="standard"
+    
+    
+        link-url="/en-us/games/nhl/nhl-22"
+    
+    
+    
+        link-text="Learn More"
+    
+    
+        icon="none"
+    
+    
+    
+        fill-color="light-brand"
+    
+    
+        text-color="dark"
+    
+    
+        stroke-color="dark"
+    
+    
+        target="_self"
+    
+    
+    
+    
+    
+        intent="navigation"
+    
+    
+    
+    
+        emphasis="primary"
+    
+    
+    
+    unresolved
+>
+    <a
+        
+            href="/en-us/games/nhl/nhl-22"
+        
+        
+    >
+        
+            Learn More
+        
+    </a>
+</ea-cta>
+
+    
+</ea-product-conversion>
+
+</ea-section-column>
+
+    
+</ea-section>
+
+
+
+            
+        
+    
+
+
+<main>
+    
+
+
+<ea-elements-loader elements="ea-section">
+</ea-elements-loader>
+<ea-section
+    unresolved
+    slot="section"
+    
+    
+        type="railed"
+    
+    
+        layout="100"
+    
+    
+        background-color="none"
+    
+    
+        background-overflow="hidden"
+    
+    
+        spacing-top="none"
+    
+    
+        spacing-bottom="none"
+    
+    
+    
+    
+        background-image-smallest="https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-20/common/buy/nhl20-section-bg-buy-gen-xl.jpg.adapt.320w.jpg"
+        background-image-small="https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-20/common/buy/nhl20-section-bg-buy-gen-xl.jpg.adapt.768w.jpg"
+        background-image-medium="https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-20/common/buy/nhl20-section-bg-buy-gen-xl.jpg.adapt.1024w.jpg"
+        background-image-large="https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-20/common/buy/nhl20-section-bg-buy-gen-xl.jpg.adapt.1456w.jpg"
+        background-image-largest="https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-20/common/buy/nhl20-section-bg-buy-gen-xl.jpg.adapt.1920w.jpg"
+        image-tooltip=""
+    
+    
+>
+    
+        <img
+            src="https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-20/common/buy/nhl20-section-bg-buy-gen-xl.jpg.adapt.320w.jpg"
+            alt=""
+            srcset="https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-20/common/buy/nhl20-section-bg-buy-gen-xl.jpg.adapt.320w.jpg 320w, https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-20/common/buy/nhl20-section-bg-buy-gen-xl.jpg.adapt.768w.jpg 768w, https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-20/common/buy/nhl20-section-bg-buy-gen-xl.jpg.adapt.1024w.jpg 1024w, https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-20/common/buy/nhl20-section-bg-buy-gen-xl.jpg.adapt.1456w.jpg 1320w, https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-20/common/buy/nhl20-section-bg-buy-gen-xl.jpg.adapt.1920w.jpg 1456w"
+        />
+    
+    
+
+
+<ea-section-column
+    slot="section-column"
+    
+        indent-left=""
+    
+    
+        indent-right=""
+    
+    
+        text-align="left"
+    
+    
+    
+>
+    
+<ea-elements-loader elements="ea-spacer">
+</ea-elements-loader>
+<ea-spacer
+    unresolved
+    
+        smallest="6rem"
+    
+    
+        small="5rem"
+    
+    
+        medium="8rem"
+    
+    
+        large="9rem"
+    
+    
+        largest="10rem"
+    
+>
+</ea-spacer>
+
+<ea-elements-loader elements="ea-subheading">
+</ea-elements-loader>
+<ea-subheading
+    unresolved
+    
+        type="ordered"
+    
+    
+        layout="small"
+    
+    
+        text-align="center"
+    
+    
+        text-color="light"
+    
+    
+    
+        title-text="Players"
+    
+    
+    
+        spacing-top="large"
+    
+    
+        spacing-bottom="large"
+    
+>
+    
+    
+        <h3>Players</h3>
+    
+    
+</ea-subheading>
+
+<ea-elements-loader elements="ea-spacer">
+</ea-elements-loader>
+<ea-spacer
+    unresolved
+    
+        smallest="0rem"
+    
+    
+        small="0rem"
+    
+    
+        medium="3rem"
+    
+    
+        large="3rem"
+    
+    
+        largest="4rem"
+    
+>
+</ea-spacer>
+
+</ea-section-column>
+
+    
+</ea-section>
+
+<ea-elements-loader elements="ea-tabs">
+</ea-elements-loader>
+<dom-bind>
+    <template>
+        <ea-tabs
+            unresolved
+            
+                theme="dark"
+            
+            
+            
+            indicate
+            autoselect
+            selected="{{ selected }}"
+        >
+            
+
+    <ea-elements-loader elements="ea-tab">
+    </ea-elements-loader>
+    <ea-tab
+        unresolved
+        
+            url="/methodology
+        
+        
+        
+            theme="dark"
+        
+    >
+        
+            Methodology
+        
+    </ea-tab>
+
+
+
+    <ea-elements-loader elements="ea-tab">
+    </ea-elements-loader>
+    <ea-tab
+        unresolved
+        
+            url="/games/nhl/nhl-21/pro-clubs/rankings"
+        
+        
+        
+            theme="dark"
+        
+    >
+        
+            Rankings
+        
+    </ea-tab>
+
+
+
+    <ea-elements-loader elements="ea-tab">
+    </ea-elements-loader>
+    <ea-tab
+        unresolved
+        
+            url="/games/nhl/nhl-21/pro-clubs/players"
+        
+        
+        
+            theme="dark"
+        
+    >
+        
+            Players
+        
+    </ea-tab>
+
+
+        </ea-tabs>
+        <iron-pages selected="{{ selected }}">
+            
+                
+                    
+                        <div>
+                            
+                        </div>
+                    
+                
+            
+                
+                    
+                        <div>
+                            
+                        </div>
+                    
+                
+            
+                
+                    
+                        <div>
+                            
+                        </div>
+                    
+                
+            
+        </iron-pages>
+    </template>
+</dom-bind>
+
+<ea-elements-loader elements="ea-section">
+</ea-elements-loader>
+<ea-section
+    unresolved
+    slot="section"
+    
+    
+        type="railed"
+    
+    
+        layout="100"
+    
+    
+        background-color="none"
+    
+    
+        background-overflow="visible"
+    
+    
+        spacing-top="small"
+    
+    
+        spacing-bottom="medium"
+    
+    
+    
+    
+    
+>
+    
+    
+
+
+<ea-section-column
+    slot="section-column"
+    
+    
+    
+        text-align="left"
+    
+    
+    
+>
+    
+<ea-elements-loader elements="ea-proclub-players">
+</ea-elements-loader>
+<ea-proclub-players
+    unresolved
+    endpoints="{&quot;playerStats&quot;:&quot;https://proclubs.ea.com/api/nhl/members/search&quot;}"
+    labels="{&quot;title&quot;:&quot;EXPLORE Stocks&quot;,&quot;searchPrompt&quot;:&quot;Please search for Players by first party ID.&quot;,&quot;searchPlaceholder&quot;:&quot;Search by first party ID&quot;,&quot;searchDataNotFound&quot;:&quot;YOUR SEARCH CONTAINED NO RESULTS.&quot;,&quot;searchDataNotFoundTips&quot;:&quot;Please check to make sure you are spelling the member&#x27;s name correctly.&quot;,&quot;loadMore&quot;:{&quot;labelText&quot;:&quot;Load More&quot;,&quot;quantity&quot;:&quot;5&quot;},&quot;platforms&quot;:[{&quot;value&quot;:&quot;ps4&quot;,&quot;text&quot;:&quot;PS4&quot;},{&quot;value&quot;:&quot;xboxone&quot;,&quot;text&quot;:&quot;Xbox One&quot;}],&quot;memberListHeaders&quot;:[{&quot;key&quot;:&quot;member&quot;,&quot;label&quot;:&quot;Member&quot;,&quot;description&quot;:&quot;Player Avatar, position and Gamertag&quot;,&quot;sortable&quot;:true,&quot;type&quot;:&quot;string&quot;},{&quot;key&quot;:&quot;skplayername&quot;,&quot;label&quot;:&quot;Name&quot;,&quot;description&quot;:&quot;Player Name&quot;,&quot;sortable&quot;:true,&quot;type&quot;:&quot;string&quot;},{&quot;key&quot;:&quot;gamesplayed&quot;,&quot;label&quot;:&quot;GP&quot;,&quot;description&quot;:&quot;Games Played&quot;,&quot;sortable&quot;:true,&quot;type&quot;:&quot;integer&quot;},{&quot;key&quot;:&quot;skgoals&quot;,&quot;label&quot;:&quot;Goals&quot;,&quot;description&quot;:&quot;Goals Scored&quot;,&quot;sortable&quot;:true,&quot;type&quot;:&quot;integer&quot;},{&quot;key&quot;:&quot;skassists&quot;,&quot;label&quot;:&quot;Assists&quot;,&quot;description&quot;:&quot;Assists&quot;,&quot;sortable&quot;:true,&quot;type&quot;:&quot;integer&quot;},{&quot;key&quot;:&quot;skplusmin&quot;,&quot;label&quot;:&quot;Plus Minus&quot;,&quot;description&quot;:&quot;Plus Minus&quot;,&quot;sortable&quot;:true,&quot;type&quot;:&quot;integer&quot;},{&quot;key&quot;:&quot;skpim&quot;,&quot;label&quot;:&quot;Penalty Minutes&quot;,&quot;description&quot;:&quot;PM&quot;,&quot;sortable&quot;:true,&quot;type&quot;:&quot;integer&quot;},{&quot;key&quot;:&quot;skhits&quot;,&quot;label&quot;:&quot;Hits&quot;,&quot;description&quot;:&quot;Hits&quot;,&quot;sortable&quot;:true,&quot;type&quot;:&quot;string&quot;},{&quot;key&quot;:&quot;glgp&quot;,&quot;label&quot;:&quot;GGP&quot;,&quot;description&quot;:&quot;Goalie Games Played&quot;,&quot;sortable&quot;:true,&quot;type&quot;:&quot;integer&quot;},{&quot;key&quot;:&quot;glgaa&quot;,&quot;label&quot;:&quot;GAA&quot;,&quot;description&quot;:&quot;Goals Against Average&quot;,&quot;sortable&quot;:true,&quot;type&quot;:&quot;integer&quot;},{&quot;key&quot;:&quot;glga&quot;,&quot;label&quot;:&quot;GA&quot;,&quot;description&quot;:&quot;Goals Against&quot;,&quot;sortable&quot;:true,&quot;type&quot;:&quot;integer&quot;},{&quot;key&quot;:&quot;glsaves&quot;,&quot;label&quot;:&quot;Saves&quot;,&quot;description&quot;:&quot;Saves&quot;,&quot;sortable&quot;:true,&quot;type&quot;:&quot;integer&quot;},{&quot;key&quot;:&quot;glsavepct&quot;,&quot;label&quot;:&quot;SP&quot;,&quot;description&quot;:&quot;Save Percentage&quot;,&quot;sortable&quot;:true,&quot;type&quot;:&quot;percentile&quot;},{&quot;key&quot;:&quot;glso&quot;,&quot;label&quot;:&quot;Shutouts&quot;,&quot;description&quot;:&quot;Shutouts&quot;,&quot;sortable&quot;:true,&quot;type&quot;:&quot;integer&quot;},{&quot;key&quot;:&quot;glsoperiods&quot;,&quot;label&quot;:&quot;SP&quot;,&quot;description&quot;:&quot;Shutouts Periods&quot;,&quot;sortable&quot;:true,&quot;type&quot;:&quot;integer&quot;}],&quot;memberPositions&quot;:{&quot;defenseMen&quot;:&quot;Defensemen&quot;,&quot;leftWing&quot;:&quot;Left Wing&quot;,&quot;center&quot;:&quot;Center&quot;,&quot;rightWing&quot;:&quot;Right Wing&quot;,&quot;goalie&quot;:&quot;Goalie&quot;}}"
+    table-header-theme="dark-brand"
+    loading-image="https://media.contentapi.ea.com/content/dam/eacom/fifa/pro-clubs/loading-animation.png"
+    tool-tip-text="Please enter 2 or more characters"
+    
+        avatar-url="https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-20/common/pro-clubs/avatar.png"
+    
+    
+        report-player-attributes="{&quot;guidanceText&quot;:&quot;Click [icon] to Report a Player.&quot;,&quot;iconTooltip&quot;:&quot;Report Player&quot;,&quot;modalId&quot;:&quot;report-modal&quot;}"
+    
+>
+</ea-proclub-players>
+
+<ea-elements-loader elements="ea-spacer">
+</ea-elements-loader>
+<ea-spacer
+    unresolved
+    
+    
+    
+    
+    
+>
+</ea-spacer>
+
+</ea-section-column>
+
+    
+</ea-section>
+
+<ea-elements-loader elements="ea-modal">
+</ea-elements-loader>
+<ea-modal
+    modal
+    unresolved
+    
+        id="report-modal"
+    
+    
+        theme="light"
+    
+    
+        type="full-bleed"
+    
+>
+    
+<ea-elements-loader elements="ea-section">
+</ea-elements-loader>
+<ea-section
+    unresolved
+    slot="section"
+    
+    
+        type="railed"
+    
+    
+        layout="100"
+    
+    
+        background-color="none"
+    
+    
+        background-overflow="visible"
+    
+    
+        spacing-top="none"
+    
+    
+        spacing-bottom="none"
+    
+    
+        mp4-src=""
+    
+    
+        webm-src=""
+    
+    
+    
+>
+    
+    
+
+
+<ea-section-column
+    slot="section-column"
+    
+        indent-left=""
+    
+    
+        indent-right=""
+    
+    
+        text-align="left"
+    
+    
+    
+>
+    
+<ea-elements-loader elements="ea-auth-switch">
+</ea-elements-loader>
+<ea-auth-switch
+    user-data-endpoint="/user-data"
+    unresolved
+>
+    <ea-auth-switch-authenticated slot="auth-switch-authenticated">
+        
+<ea-elements-loader elements="ea-proclub-report">
+</ea-elements-loader>
+<ea-proclub-report
+    unresolved
+    logout-url="/logout"
+    endpoint="/api/nhl/reportAbusiveContent"
+    labels="{&quot;loginText&quot;:&quot;Logged in as&quot;,&quot;logoutText&quot;:&quot;log out&quot;,&quot;reportTitle&quot;:&quot;Report Abuse&quot;,&quot;reportTypeTitle&quot;:&quot;Report Type&quot;,&quot;reportTypeLabel&quot;:&quot;Player&quot;,&quot;reasonTitle&quot;:&quot;Reason for Reporting&quot;,&quot;reasonLabel&quot;:&quot;Reason&quot;,&quot;submitText&quot;:&quot;Submit Report&quot;,&quot;reasons&quot;:{&quot;OFFENSIVE&quot;:&quot;Offensive Content&quot;,&quot;SUICIDE_THREAT&quot;:&quot;Suicide Threat&quot;,&quot;TERRORIST_THREAT&quot;:&quot;Terrorist Threat&quot;,&quot;CHILD_SOLICITATION&quot;:&quot;Child Solicitation&quot;},&quot;successTitle&quot;:&quot;Success&quot;,&quot;successMessage&quot;:&quot;Thank you. Your report has been submitted successfully. &quot;,&quot;failureTitle&quot;:&quot;Error&quot;,&quot;failureMessage&quot;:&quot;Error. Maximum number of reports sent, please try again later.&quot;}"
+    submit-text-color="dark"
+></ea-proclub-report>
+
+    </ea-auth-switch-authenticated>
+    <ea-auth-switch-unauthenticated slot="auth-switch-unauthenticated">
+        
+<ea-elements-loader elements="ea-section">
+</ea-elements-loader>
+<ea-section
+    unresolved
+    slot="section"
+    
+    
+        type="full-bleed"
+    
+    
+        layout="100"
+    
+    
+        background-color="none"
+    
+    
+        background-overflow="visible"
+    
+    
+        spacing-top="none"
+    
+    
+        spacing-bottom="none"
+    
+    
+    
+    
+    
+>
+    
+    
+
+
+<ea-section-column
+    slot="section-column"
+    
+    
+    
+        text-align="center"
+    
+    
+    
+>
+    
+<ea-elements-loader elements="ea-text">
+</ea-elements-loader>
+<ea-text
+    unresolved
+    slot="text"
+    
+        text-color="dark"
+    
+>
+    <p style="text-align: left;"><b>REPORT ABUSE</b></p>
+<p style="text-align: left;">You must be logged in to your EA Account</p>
+
+    
+</ea-text>
+
+<ea-elements-loader elements="ea-cta">
+</ea-elements-loader>
+<ea-cta
+    
+        slot="cta"
+    
+    
+        type="standard"
+    
+    
+        link-url="/login"
+    
+    
+    
+        link-text="Login"
+    
+    
+        icon="none"
+    
+    
+    
+        fill-color="brand"
+    
+    
+        text-color="dark"
+    
+    
+        stroke-color="none"
+    
+    
+        target="_self"
+    
+    
+    
+    
+    
+        intent="navigation"
+    
+    
+    
+    
+        emphasis="primary"
+    
+    
+    
+    unresolved
+>
+    <a
+        
+            href="/login"
+        
+        
+    >
+        
+            Login
+        
+    </a>
+</ea-cta>
+
+</ea-section-column>
+
+    
+</ea-section>
+
+    </ea-auth-switch-unauthenticated>
+</ea-auth-switch>
+
+</ea-section-column>
+
+    
+</ea-section>
+
+</ea-modal>
+
+
+
+
+    
+        
+    
+
+
+
+    
+    <div style="display: none;"></div>
+</main>
+<footer role="contentinfo">
+    
+
+    
+        
+            
+                
+
+    
+<ea-elements-loader elements="ea-local-footer, ea-local-links, ea-local-link, ea-social-links, ea-social-link">
+</ea-elements-loader>
+<ea-local-footer theme="light" unresolved>
+    <ea-local-links
+        slot="local-links"
+        title-text="NHL 21"
+        text-color="light"
+        unresolved
+    >
+    
+        <ea-local-link
+            slot="local-link"
+            link-url="/games/nhl/nhl-21/cover-athlete"
+            link-title="Cover Athlete"
+            link-text="Cover Athlete"
+            text-color="light"
+            unresolved
+        >
+            <a
+                href="/games/nhl/nhl-21/cover-athlete"
+                title="Cover Athlete"
+            >Cover Athlete</a>
+        </ea-local-link>
+    
+        <ea-local-link
+            slot="local-link"
+            link-url="/games/nhl/nhl-21/top-50"
+            link-title="Top 50"
+            link-text="Top 50"
+            text-color="light"
+            unresolved
+        >
+            <a
+                href="/games/nhl/nhl-21/top-50"
+                title="Top 50"
+            >Top 50</a>
+        </ea-local-link>
+    
+        <ea-local-link
+            slot="local-link"
+            link-url="/games/nhl/nhl-21/news"
+            link-title="News"
+            link-text="News"
+            text-color="light"
+            unresolved
+        >
+            <a
+                href="/games/nhl/nhl-21/news"
+                title="News"
+            >News</a>
+        </ea-local-link>
+    
+        <ea-local-link
+            slot="local-link"
+            link-url="/able/resources/nhl/nhl-21"
+            link-title="Accessibility"
+            link-text="Accessibility"
+            text-color="light"
+            unresolved
+        >
+            <a
+                href="/able/resources/nhl/nhl-21"
+                title="Accessibility"
+            >Accessibility</a>
+        </ea-local-link>
+    
+        <ea-local-link
+            slot="local-link"
+            link-url="/games/nhl/nhl-21/buy"
+            link-title=""
+            link-text="Buy Now"
+            text-color="light"
+            unresolved
+        >
+            <a
+                href="/games/nhl/nhl-21/buy"
+                title=""
+            >Buy Now</a>
+        </ea-local-link>
+    
+    </ea-local-links>
+
+    <ea-social-links
+        slot="social-links"
+        text-color="light"
+        title-text="Follow NHL"
+        unresolved
+    >
+    
+        <ea-social-link
+            slot="social-link"
+            link-url="http://www.facebook.com/easportsnhl"
+            link-title="Facebook"
+            link-target="_blank"
+            text-color="light"
+            theme="brand"
+            social-network="facebook"
+            unresolved
+        >
+            <a
+                href="http://www.facebook.com/easportsnhl"
+                title="Facebook"
+            >facebook</a>
+        </ea-social-link>
+    
+        <ea-social-link
+            slot="social-link"
+            link-url="https://twitter.com/EASPORTSNHL"
+            link-title="Twitter"
+            link-target="_blank"
+            text-color="light"
+            theme="brand"
+            social-network="twitter"
+            unresolved
+        >
+            <a
+                href="https://twitter.com/EASPORTSNHL"
+                title="Twitter"
+            >twitter</a>
+        </ea-social-link>
+    
+    </ea-social-links>
+
+    
+
+    
+        
+<ea-elements-loader elements="ea-rating-link">
+</ea-elements-loader>
+<ea-rating-link
+    unresolved
+    slot="rating-link"
+    link-url="http://www.nhl.com/"
+    link-title="Official NHL Website"
+    
+    
+        image-smallest="https://media.contentapi.ea.com/content/dam/ea/easports/nhl/footer/nhl-shield-new.png"
+        image-small="https://media.contentapi.ea.com/content/dam/ea/easports/nhl/footer/nhl-shield-new.png"
+        image-medium="https://media.contentapi.ea.com/content/dam/ea/easports/nhl/footer/nhl-shield-new.png"
+        image-large="https://media.contentapi.ea.com/content/dam/ea/easports/nhl/footer/nhl-shield-new.png"
+        image-largest="https://media.contentapi.ea.com/content/dam/ea/easports/nhl/footer/nhl-shield-new.png"
+        image-alt=""
+        
+        
+    
+>
+    <a
+        href="http://www.nhl.com/"
+        title="Official NHL Website"
+    ></a>
+</ea-rating-link>
+
+<ea-elements-loader elements="ea-rating-link">
+</ea-elements-loader>
+<ea-rating-link
+    unresolved
+    slot="rating-link"
+    link-url="http://www.nhlpa.com/"
+    link-title="NHLPA"
+    
+    
+        image-smallest="https://media.contentapi.ea.com/content/dam/ea/easports/nhl/footer/nhlpa.png"
+        image-small="https://media.contentapi.ea.com/content/dam/ea/easports/nhl/footer/nhlpa.png"
+        image-medium="https://media.contentapi.ea.com/content/dam/ea/easports/nhl/footer/nhlpa.png"
+        image-large="https://media.contentapi.ea.com/content/dam/ea/easports/nhl/footer/nhlpa.png"
+        image-largest="https://media.contentapi.ea.com/content/dam/ea/easports/nhl/footer/nhlpa.png"
+        image-alt=""
+        
+        
+    
+>
+    <a
+        href="http://www.nhlpa.com/"
+        title="NHLPA"
+    ></a>
+</ea-rating-link>
+
+<ea-elements-loader elements="ea-rating-link">
+</ea-elements-loader>
+<ea-rating-link
+    unresolved
+    slot="rating-link"
+    link-url="http://www.esrb.org"
+    link-title="ESRB"
+    
+    
+        image-smallest="https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-21/common/age-ratings/updated-age-ratings/nhl21-esrb-new-1.svg"
+        image-small="https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-21/common/age-ratings/updated-age-ratings/nhl21-esrb-new-1.svg"
+        image-medium="https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-21/common/age-ratings/updated-age-ratings/nhl21-esrb-new-1.svg"
+        image-large="https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-21/common/age-ratings/updated-age-ratings/nhl21-esrb-new-1.svg"
+        image-largest="https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-21/common/age-ratings/updated-age-ratings/nhl21-esrb-new-1.svg"
+        image-alt=""
+        
+        
+    
+>
+    <a
+        href="http://www.esrb.org"
+        title="ESRB"
+    ></a>
+</ea-rating-link>
+
+    
+    
+</ea-local-footer>
+
+
+
+            
+        
+    
+
+
+    
+
+    
+        
+            
+                
+
+    
+<ea-elements-loader elements="ea-network-footer, ea-network-legal, ea-link, ea-content-loader">
+</ea-elements-loader>
+<ea-network-footer
+    theme="dark"
+    
+    
+        logo-image="https://media.contentapi.ea.com/content/dam/eacom/en-us/common/october-ea-ring.png"
+        logo-tooltip=""
+    
+    
+        logo-link-url="https://www.ea.com"
+        logo-link-text="EA"
+        logo-link-tooltip="EA"
+    
+    unresolved
+>
+    
+        <img
+            src="https://media.contentapi.ea.com/content/dam/eacom/en-us/common/october-ea-ring.png"
+            alt=""
+        />
+    
+    
+        
+            <ea-link
+                slot="link"
+                link-href="https://www.ea.com/games"
+                link-title="Browse Games"
+                link-text="Browse Games"
+                text-color="dark"
+                unresolved
+            >
+                <a
+                    href="https://www.ea.com/games"
+                    title="Browse Games"
+                >Browse Games</a>
+            </ea-link>
+        
+            <ea-link
+                slot="link"
+                link-href="https://www.ea.com/news"
+                link-title="Latest News"
+                link-text="Latest News"
+                text-color="dark"
+                unresolved
+            >
+                <a
+                    href="https://www.ea.com/news"
+                    title="Latest News"
+                >Latest News</a>
+            </ea-link>
+        
+            <ea-link
+                slot="link"
+                link-href="https://help.ea.com"
+                link-title="Help Center"
+                link-text="Help Center"
+                text-color="dark"
+                unresolved
+            >
+                <a
+                    href="https://help.ea.com"
+                    title="Help Center"
+                >Help Center</a>
+            </ea-link>
+        
+            <ea-link
+                slot="link"
+                link-href="https://www.ea.com/forums"
+                link-title="EA Forums"
+                link-text="EA Forums"
+                text-color="dark"
+                unresolved
+            >
+                <a
+                    href="https://www.ea.com/forums"
+                    title="EA Forums"
+                >EA Forums</a>
+            </ea-link>
+        
+            <ea-link
+                slot="link"
+                link-href="http://www.ea.com/about"
+                link-title="About Us"
+                link-text="About Us"
+                text-color="dark"
+                unresolved
+            >
+                <a
+                    href="http://www.ea.com/about"
+                    title="About Us"
+                >About Us</a>
+            </ea-link>
+        
+            <ea-link
+                slot="link"
+                link-href="https://www.ea.com/careers"
+                link-title="Careers"
+                link-text="Careers"
+                text-color="dark"
+                unresolved
+            >
+                <a
+                    href="https://www.ea.com/careers"
+                    title="Careers"
+                >Careers</a>
+            </ea-link>
+        
+    
+    
+<ea-elements-loader elements="ea-locale-selector">
+</ea-elements-loader>
+<ea-locale-selector
+    slot="locale-selector"
+    theme="dark"
+    value="en-us"
+    
+    unresolved
+    >
+    
+        <ea-locale-selector-option
+            slot="locale-selector-option"
+            value="en-us"
+        >United States</ea-locale-selector-option>
+    
+        <ea-locale-selector-option
+            slot="locale-selector-option"
+            value="en-ca"
+        >Canada (EN)</ea-locale-selector-option>
+    
+        <ea-locale-selector-option
+            slot="locale-selector-option"
+            value="fr-ca"
+        >Canada (FR)</ea-locale-selector-option>
+    
+        <ea-locale-selector-option
+            slot="locale-selector-option"
+            value="de-de"
+        >Deutschland</ea-locale-selector-option>
+    
+        <ea-locale-selector-option
+            slot="locale-selector-option"
+            value="fi-fi"
+        >Suomi</ea-locale-selector-option>
+    
+        <ea-locale-selector-option
+            slot="locale-selector-option"
+            value="sv-se"
+        >Sverige</ea-locale-selector-option>
+    
+        <ea-locale-selector-option
+            slot="locale-selector-option"
+            value="cs-cz"
+        >Česká Republika</ea-locale-selector-option>
+    
+        <ea-locale-selector-option
+            slot="locale-selector-option"
+            value="ru-ru"
+        >Россия</ea-locale-selector-option>
+    
+</ea-locale-selector>
+
+    <ea-network-legal
+        slot="network-legal"
+        copyright-text="© 2021 Electronic Arts Inc."
+        text-color="dark"
+        unresolved
+    >
+        
+            <ea-link
+                slot="link"
+                link-href="http://www.ea.com/legal"
+                link-title="Legal"
+                link-text="Legal"
+                text-color="dark"
+                unresolved
+            >
+                <a
+                    href="http://www.ea.com/legal"
+                    title="Legal"
+                >Legal</a>
+            </ea-link>
+        
+            <ea-link
+                slot="link"
+                link-href="http://www.ea.com/service-updates"
+                link-title="Online Service Updates"
+                link-text="Online Service Updates"
+                text-color="dark"
+                unresolved
+            >
+                <a
+                    href="http://www.ea.com/service-updates"
+                    title="Online Service Updates"
+                >Online Service Updates</a>
+            </ea-link>
+        
+            <ea-link
+                slot="link"
+                link-href="https://www.ea.com/terms-of-service"
+                link-title="NEW User Agreement"
+                link-text="User Agreement"
+                text-color="dark"
+                unresolved
+            >
+                <a
+                    href="https://www.ea.com/terms-of-service"
+                    title="NEW User Agreement"
+                >User Agreement</a>
+            </ea-link>
+        
+            <ea-link
+                slot="link"
+                link-href="http://tos.ea.com/legalapp/WEBPRIVACY/US/en/PC/"
+                link-title="Privacy &amp; Cookie Policy (Your Privacy Rights)"
+                link-text="Privacy &amp; Cookie Policy (Your Privacy Rights)"
+                text-color="dark"
+                unresolved
+            >
+                <a
+                    href="http://tos.ea.com/legalapp/WEBPRIVACY/US/en/PC/"
+                    title="Privacy &amp; Cookie Policy (Your Privacy Rights)"
+                >Privacy &amp; Cookie Policy (Your Privacy Rights)</a>
+            </ea-link>
+        
+        <ea-content-loader
+            slot="link"
+            content-url="https://www.ea.com/ccpa/footer-link"
+        >
+        </ea-content-loader>
+        
+    </ea-network-legal>
+    
+<ea-elements-loader elements="ea-truste">
+</ea-elements-loader>
+<ea-truste
+    unresolved
+    slot="truste"
+    
+        domain="ea.com"
+    
+>
+    <div>
+        
+            <a href="//privacy.truste.com/privacy-seal/validation?rid=f1a11c5d-0232-4077-8498-2e69a38c1335" target="_blank">
+                <img style="border: none" src="//privacy-policy.truste.com/privacy-seal/seal?rid=f1a11c5d-0232-4077-8498-2e69a38c1335" alt="TRUSTe"/>
+            </a>
+        
+    </div>
+</ea-truste>
+
+</ea-network-footer>
+
+
+
+            
+        
+    
+
+
+</footer>
+<ea-player player-endpoint="/user-data"></ea-player>
+
+
+    
+        
+            
+                
+<ea-elements-loader elements="ea-modal">
+</ea-elements-loader>
+<ea-modal
+    modal
+    unresolved
+    
+        id="eacomagegate"
+    
+    
+        theme="dark"
+    
+    
+>
+    
+<ea-elements-loader elements="ea-age-gate">
+</ea-elements-loader>
+<ea-age-gate
+    unresolved
+    slot="age-gate"
+    id="eacomagegate"
+    
+        age="18"
+    
+    
+        error="You are not eligible to view this content."
+    
+    
+        message="Please provide your birth date. "
+    
+>
+    
+        
+<ea-elements-loader elements="ea-date-field">
+</ea-elements-loader>
+<ea-date-field
+    
+        slot="date-field"
+    
+    
+        type="date"
+    
+    
+    
+    
+    
+    
+        text-color="light"
+    
+    
+    
+        month-placeholder="MM"
+    
+    
+        day-placeholder="DD"
+    
+    
+        year-placeholder="YYYY"
+    
+    
+    
+        label-text="Enter your birthdate"
+    
+    
+    
+    unresolved
+>
+</ea-date-field>
+
+    
+    
+        
+<ea-elements-loader elements="ea-submit">
+</ea-elements-loader>
+<ea-submit
+    unresolved
+    
+        slot="submit"
+    
+    
+        value-text="Submit"
+    
+    
+        text-color="light"
+    
+    
+    
+></ea-submit>
+
+    
+</ea-age-gate>
+
+</ea-modal>
+
+            
+        
+    
+
+
+
+
+    
+        
+            
+                <script src="//pl.ea.com/release/4.28.0/elements/browser-support.min.js"></script>
+<script>
+    eaBrowserSupport.requiredFeatures = 'picture';
+    eaBrowserSupport.requiredHeading = 'Sorry, this browser is not supported';
+    eaBrowserSupport.requiredText = 'Please download a supported browser to view this webpage.';
+    eaBrowserSupport.recommendedFeatures = 'cssgrid';
+    eaBrowserSupport.recommendedText = 'This browser is not recommended and the webpage may not display properly.';
+    eaBrowserSupport.ctas = [{"text":"Download Chrome","url":"https://www.google.com/chrome/"},{"text":"Download Firefox","url":"https://www.mozilla.org/firefox/new/"},{"text":"Download Edge","url":"https://www.microsoft.com/edge/"}];
+    eaBrowserSupport.dismissText = 'Dismiss';
+    eaBrowserSupport.svgLogo = '';
+    eaBrowserSupport.init();
+</script>
+
+            
+        
+    
+
+
+
+
+    <ea-type-kit kit-url="//use.typekit.net/txn1klh.js"></ea-type-kit>
+
+
+    </body>
+</html>
+

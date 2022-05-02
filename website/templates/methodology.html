@@ -1,0 +1,59 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content%}
+<head>
+    <style type="text/css">
+        tab1 { padding-left: 4em;}
+	</style>
+</head>
+<body>
+    <h4> Investment theory and how the Algorithm's selects stocks to execute that theory</h4>
+   <p><strong>Thesis question?:  </strong>Do stock market analysts actually know what they are doing and can they outpreform "the market"?<br>
+    In general, this algorithm is trying to at least track if not outpreform this TipRanks smart score fund <a href=https://www.tipranks.com/stocks-to-buy>TipRanks Smart Score Fund</a><br>
+    As of today the TipRanks smart score fund has generated 71% alpha over the S&P 500 which itself has generated 220% returns since 01/2016.<br>
+    TipRanks.com charges $29.99/month for access to their smart score fund picks, I don't want to pay that and I want to take more risk and generate more returns<br>
+    I can't be sure of every factor the TipRanks fund takes into account , but given the nature of TipRanks.com one has to assume it is something to do with analysts evaluations of stocks<br>
+
+    <br><br>
+    <strong>Plain language explanation of what the algorithm does</strong><br>
+
+    From finviz.com using it's free screener tool , pull a list of symbols that meet all of the following criteria: <br>
+    Stocks that are based in the United States<br>
+    Stocks that have a market cap over $50 million USD<br>
+    Stocks that have 30% upside from their currently traded price <br>
+    Stocks that have a share price over $5 USD<br>
+    Stocks that have a rating of 'Buy or better' in the 'Analyst Recom.' filter <br>
+    You can see this actual list here from FinViz.com : https://finviz.com/screener.ashx?v=111&f=an_recom_buybetter,cap_microover,geo_usa,sh_price_o5,targetprice_a30&ft=4<br>
+    This generally returns around 650 stocks<br><br>
+
+    Each of these stocks are then queried in RobinHood and must meet the following criteria:<br>
+    Have at least 5 analysts covering it<br>
+    Have at least 80% of those analysts with a BUY rating <br>
+    RobinHood rejects around 330 stocks out of the inital 615<br><br>
+
+    Each of those remaining 300 stocks are then filtered via Yahoo finance<br>
+    It must meet the same criteria as RobinHood, 5 analysts minimum , 80% BUY rating <br>
+    Yahoo rejects around 275 stocks<br>
+
+    Each of those remaining 50 stocks are then filtered via TipRanks <br>
+    TipRanks is the most critical , but also the slowest source <br>
+    For each symbol they must meet the following criteria from TipRanks.com:<br>
+    Must have a TipRanks smart score above 8<br>
+    It can not have a smart string of 'NEUTRAL' or 'UNDERPREFORM'<br>
+    It MUST have a target price that is 40% higher than it's current price<br>
+    Out of the 50 stocks sent to TipRanks.com it rejects around 40<br><br>
+
+    Here is an example from a log of the algorithm's execution<br>
+    2021-08-31 15:24:06.552896 - Analyzing 663 total symbols<br>
+    2021-08-31 15:55:13.617845 - RH has rejected 332 symbols<br>
+    2021-08-31 15:55:13.617991 - Yahoo has rejected 275 symbols<br>
+    2021-08-31 15:55:13.618136 - Tip Ranks has rejected 39 symbols<br>
+    2021-08-31 15:55:13.618284 - The Algo has rejected a total of 646 out of 663<br>
+
+
+
+
+
+
+
+
+
+{%endblock %}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  * {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .navbar {
+    overflow: hidden;
+    background-color: #d6d3d1;
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+  }
+
+.navbar a {
+  float: left;
+  font-size: xx-large;
+  color:   black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+  font-size: xx-large;
+}
+
+.dropdown .dropbtn {
+  font-size: xx-large;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #948c93;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #7396ae;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: rgb(0, 0, 0);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #567b95;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+body {
+    /*background: linear-gradient(rgba(255, 255, 255, 0.582), rgba(255,255,255,.582)), url('/static/laptop.jpg') no-repeat center center fixed; */
+    /* background:url('/static/laptop.jpg') no-repeat center top fixed; */
+    background-color: white;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+</style>
+</head>
+<div class="navbar">
+  <a href="/"><b>StockBotics</b></a>
+  {% if user.is_authenticated %}
+  <div class="dropdown">
+    <button class="dropbtn">Algo outputs 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="/today">Today's Buys</a>
+      <a href="/all_buys">All buys</a>
+      <a href="/top_preforming">Top performing</a>
+      <a href="/individual">Test a symbol</a>
+      <a href="/all_open">All open positions</a>
+      <a href="/closed">All closed positions</a>
+    </div>
+  </div>
+<a style="float:right;" id="signout" href="/logout">Sign Out</a>
+
+  {% else %}
+  <a id="signUp" href="/sign-up">Sign Up</a>
+   {%endif%}
+  </a>
+  </div>
+  <!-- <div class="dropdown" style="float:right;">
+    <button class="dropbtn">Dropdown 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div> --> 
+</div>
+<body>
+    <div class="container">{% block content %} {% endblock %}</div>
+</div>
+</body>
+</html>

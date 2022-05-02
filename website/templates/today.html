@@ -1,0 +1,137 @@
+
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content%}
+<style>
+    table {
+        /* cellspacing */
+        border-spacing: 0;
+        border: 1px solid black;
+    }
+    th {
+        border-spacing: 0;
+        border-spacing: 0;
+        border: 1px solid black;
+        padding: 6px;
+        /* This covers the th elements */
+    }
+    tr {
+        border-spacing: 0;
+        border: 1px solid black;
+        padding: 6px;
+        /* This covers the tr elements */
+    }
+    th, td {
+        /* cellpadding */
+        padding: 6px;
+        border-spacing: 0;
+        border: 1px solid black;
+    
+    }
+    </style>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    function filterText()
+        {
+            var val = $('#filterText').val();
+            if(val === "")
+               return;
+            if(val === "all")
+              clearFilter();
+            else
+    
+            $('.still_buy').each(function() {
+              $(this).parent().toggle($(this).text()=== val);
+            });
+    
+        }
+       function clearFilter()
+        {
+            $('.filterText').val('');
+            $('.row').show();
+        }
+    </script>
+    
+    <script>
+    function filterTextTerm()
+        {
+            var val = $('#filterTextTerm').val();
+            if(val === "")
+               return;
+            if(val === "all")
+              clearFilterTerm();
+            else
+    
+            $('.term').each(function() {
+              $(this).parent().toggle($(this).text()=== val);
+            });
+    
+        }
+       function clearFilterTerm()
+        {
+            $('.filterTextTerm').val('');
+            $('.row').show();
+        }
+    </script>
+    
+    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+    <br>
+    <h3 align="left">StockBotics - An algorithm to programmatically select stocks </h3>
+    <h4 align="left">This version of the algorithm has been running since {{data['first_date']}}</h4>
+    <h4 align="left">The algorithm has opened {{total_open}} positions worth ${{data['total_buy']}}</h4>
+    <h4 align="left">Today those positions are worth ${{data['total_cp']}}</h4>
+    <h4 align="left">The algorithm has had a total profit of ${{total_profit}} for a percentage return of {{data['total_percent']}}%</h4>
+    <h4 align="left">The S&P 500 over the same time frame has a percentage return of {{data['voo_profit']}}%</h4>
+    <h4 align="left"> Click <a href=/glossary>here</a> for a glossary of terms</h4>
+    <h4 align="left"> Click <a href=/methodology>here</a> for an explanation of how and why the algorithm selects symbols</h4>
+    <h4 align="left"> Below are the algorithm's current open positions </h4>
+<br>
+    <table class="table table-striped sortable">
+        <tr>
+            <th>Symbol</th>
+            <th>Still Buy?</th>
+            <th>Buy Date</th>
+            <th>Buy Price</th>
+            <th>RH tot</th>
+            <th>RH BUY</th>
+            <th>RH per</th>
+            <th>Y tot</th>
+            <th>Y BUY</th>
+            <th>Y per</th>
+            <th>F rating</th>
+            <th>F TP</th>
+            <th>T TP</th>
+            <th>T TP per</th>
+            <th>T smart rating</th>
+            <th>T smart score</th>
+            <th>T fundementals</th>
+            <th>T sediment</th>
+            <th>CP</th>
+            <th>Profit</th>
+            <th>Percent return</th>
+            </tr>
+            {% for row in rows %}
+                <tr class="item"></tr>
+                    <td>{{ row['symbol'] }}</td>
+                    <td>{{ row['buy_state'] }}</td>
+                    <td>{{ row['action_date'] }}</td>
+                    <td>${{ row['action_price'] }}</td>
+                    <td>{{ row['rh_total_analysts'] }}</td>
+                    <td>{{ row['rh_buy_analysts'] }}</td>
+                    <td>{{ row['rh_percent_buy'] }}%</td>
+                    <td>{{ row['yahoo_number_analysts'] }}</td>
+                    <td>{{ row['yahoo_number_buy_analysts'] }}</td>
+                    <td>{{ row['yahoo_percent_buys'] }}%</td>
+                    <td>{{ row['finviz_recom'] }}</td>
+                    <td>{{ row['finviz_tp'] }}</td>
+                    <td>${{ row['tipranks_tp'] }}</td>
+                    <td>{{ row['tipranks_tp_percent'] }}%</td>
+                    <td>{{ row['tipranks_smart_string'] }}</td>
+                    <td>{{ row['tipranks_smart_score'] }}</td>
+                    <td>{{ row['tipranks_fundementals'] }}</td>
+                    <td>{{ row['tipranks_sediment'] }}</td>
+                    <td>${{ row['cp'] }}</td>
+                    <td>${{ row['profit'] }}</td>
+                    <td>{{ row['percent_profit'] }}%</td>
+            {% endfor %}
+        </table>
+{% endblock %}

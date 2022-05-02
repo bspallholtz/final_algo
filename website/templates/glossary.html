@@ -1,0 +1,47 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content%}
+<head>
+    <style>
+        tab1 { padding-left: 4em; }
+	</style>
+</head>
+<body>
+    <h4> Glossary of terms used within this website</h4>
+    <p><strong>Symbol = </strong>The stock symbol , if you don't know what this is , you are on the wrong site<br>
+    <strong>Still Buy? =</strong> Does the algo recommend this symbol as a 'buy' still<br>
+    <strong>Data Sources:</strong><br>
+    <tab1><strong>RH =</strong> RobinHood, a data point from RobinHood, example: <a href=https://robinhood.com/stocks/AAPL>Apple stock on RH</a><br>
+    <tab1><strong>Y =</strong></tab1> Yahoo , a data point we got from Yahoo Finance, example: <a href=https://finance.yahoo.com/quote/AAPL/>Apple stock on Y</a><br>
+    <tab1><strong>F =</strong></tab1> FinViz.com a datapoint the Algo gets from finviz.com, example: <a href=https://finviz.com/quote.ashx?t=AAPL>Apple stock on F</a><br>
+    <tab1><strong>T = </strong></tab1> TipRanks.com a datapoint the Algo gets from tipranks.com, example: <a href=https://www.tipranks.com/stocks/aapl/stock-analysis>Apple stock on T</a><br><br>
+
+<br>
+<strong>General Terms section</strong><br>
+CP = The latest current price of the symbol, come from RobinHood<br>
+TP = Target price , the target price of a symbol from a given data source <br><br>
+the market = The percentage return of the S&P index, used as a benchmark for this algorithm
+alpha = The percentage of preformance above the market 
+    
+<strong>RobinHood section</strong><br>
+RH tot = Total number of Analysts with coverage on RobinHood <br>
+RH BUY = The number of Analysts on RobinHood with a BUY rating <br>
+RH per = The percentage of Analysts on RobinHood with a BUY rating <br><br>
+
+<strong>Yahoo Finance terms</strong><br>
+Y tot = The total number of Analysts from Yahoo with coverage on this symbol<br>
+Y BUY = The number of Analysts on Yahoo with a BUY rating <br>
+Y per = The percentage of Analysts on Yahoo with a BUY rating <br><br>
+
+<strong>FinViz.com section</strong><br>
+F rating = The buy ( 1 ) or sell ( 5 ) rating FinViz rates the symbol, the closer the rating to 1 the better <br>
+F TP = The Target price of the symbol coming from the datasource FinViz<br><br>
+
+<strong>TipRanks.com section</strong><br>
+T TP = The Target price of the symbol coming from the datasource Tipranks.com<br>
+T TP per = The percentage above the the CP of a symbol's TP from datasource Tipranks.com<br>
+T smart rating = A rating of how the symbol should preform vs other symbols</br>
+T smart score = A interger custom rating from the datasouce Tipranks.com, 10 is the best, 1 is the worst <br>
+T fundementals = A fundemental rating that comes from TipRanks.com , Strong Buy is the best, Strong sell is the worst<br> 
+T sediment = A market sediment from the Analysts on Tipranks.com, Bullish is the best, Bearish is the worst<br><br>
+
+</body>
+{%endblock %}

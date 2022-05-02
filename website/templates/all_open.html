@@ -1,0 +1,107 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content %}
+<style>
+    table {
+        /* cellspacing */
+        border-spacing: 0;
+        border: 1px solid black;
+    }
+    th {
+        border-spacing: 0;
+        border-spacing: 0;
+        border: 1px solid black;
+        padding: 6px;
+        /* This covers the th elements */
+    }
+    tr {
+        border-spacing: 0;
+        border: 1px solid black;
+        padding: 6px;
+        /* This covers the tr elements */
+    }
+    th, td {
+        /* cellpadding */
+        padding: 6px;
+        border-spacing: 0;
+        border: 1px solid black;
+    
+    }
+    </style>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    function filterText()
+        {
+            var val = $('#filterText').val();
+            if(val === "")
+               return;
+            if(val === "all")
+              clearFilter();
+            else
+    
+            $('.still_buy').each(function() {
+              $(this).parent().toggle($(this).text()=== val);
+            });
+    
+        }
+       function clearFilter()
+        {
+            $('.filterText').val('');
+            $('.row').show();
+        }
+    </script>
+    
+    <script>
+    function filterTextTerm()
+        {
+            var val = $('#filterTextTerm').val();
+            if(val === "")
+               return;
+            if(val === "all")
+              clearFilterTerm();
+            else
+    
+            $('.term').each(function() {
+              $(this).parent().toggle($(this).text()=== val);
+            });
+    
+        }
+       function clearFilterTerm()
+        {
+            $('.filterTextTerm').val('');
+            $('.row').show();
+        }
+    </script>
+    
+    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+<h2 align="center">Top preforming stocks the algorithm has selected</h2>
+<br>
+<h4 align="center">Starting date of algorithm run: {{ first_date }}</h4>
+<h4 align="center">Rate of return of the algorithm: {{ total_return }}%</h4>
+<h4 align="center">Rate of return of the S&P 500: {{ voo_return }}%</h4>
+<br>
+<br>
+<br>
+<br>
+    <table class="table table-striped sortable">
+        <tr>
+            <th>Symbol</th>
+            <th>Buy Price</th>
+            <th>Current Price</th>
+            <th>Buy Date</th>
+            <th>Star</th>
+            <th>Still Buy?</th>
+            <th>Profit</th>
+         </tr>
+        </tr>
+        {% for row in rows %}
+          <tr class="item">
+              <td>{{ row[0] }}</td>
+              <td>{{ row[1] }}</td>
+              <td>{{ row[2] }}</td>
+              <td>{{ row[3] }}</td>
+              <td>{{ row[4] }}</td>
+              <td>{{ row[5] }}</td>
+              <td>{{ row[6] }}%</td>
+        {% endfor %}
+    </table>
+{% endblock %}
