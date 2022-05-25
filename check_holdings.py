@@ -1,5 +1,9 @@
+from symtable import Symbol
 import rh_lib as r
-import tipranks_lib as t
+import zacks_lib
 import json
+holdings = r.get_open_symbols()
+holdings.sort()
+print(zacks_lib.batch(holdings,True))
 
-print(json.dumps(t.new(r.get_open_symbols(),len(r.get_open_symbols()))))
+    

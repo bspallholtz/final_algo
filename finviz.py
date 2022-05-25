@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import time
 
 import log_lib as l
 
@@ -42,7 +43,7 @@ def get_target( target=None):
         target = 50
     return str(target)
 
-def get_symbol_data( end):
+def get_symbol_data(end):
     """For a FinViz URL return the Symbols it finds"""
     response = requests.get(end, headers={'User-Agent': 'curl/7.61.1','Accept': '*/*'})
     soup = BeautifulSoup(response.text, "html.parser")
@@ -62,38 +63,11 @@ def get_symbol_data( end):
         symbols.append(symbol.split('|')[0])
     return symbols
 
-def get_symbols( cap=None, target=None,sh_price=0,an_recom=None):
-    """Query FinViz to  get a set of symbols back"""
-    symbols = []
-    an_recom = get_an_recom(an_recom)
-    cap = get_cap(cap)
-    target = get_target(target)
-    r = 1
-    end = "https://finviz.com/screener.ashx?v=111&f=an_recom_{an_recom},cap_{cap},geo_usa,sh_price_o{sh_price},targetprice_a{target}&r={r}".format(an_recom=an_recom, cap=cap, target=target,sh_price=sh_price, r=r)
-    symbol_data = get_symbol_data(end)
-    if symbol_data is None:
-        return []
-    symbols.extend(symbol_data)
-    hold = False
-    while hold is False:
-        r = r + 20
-        end = "https://finviz.com/screener.ashx?v=111&f=an_recom_{an_recom},cap_{cap},geo_usa,sh_price_o{sh_price},targetprice_a{target}&r={r}".format(an_recom=an_recom, cap=cap, target=target,sh_price=sh_price, r=r)
-        symbol_data = get_symbol_data(end)
-        if symbol_data is None:
-            hold = True
-        elif len(symbol_data) == 1:
-            symbols.extend(symbol_data)
-            hold = True
-        else:
-            symbols.extend(symbol_data)
-    return sorted(set(symbols))
-
 def get_new():
-    end = 'https://finviz.com/screener.ashx?v=111&f=an_recom_strongbuy,cap_smallover,geo_usa,sh_avgvol_o500,sh_price_o10,targetprice_a30&ft=4'
+    end = 'https://finviz.com/screener.ashx?v=111&f=an_recom_buybetter,cap_smallover,geo_usa,sh_price_o5,targetprice_a30&ft=4'
     symbols = []
     r = 1
     symbol_data = get_symbol_data(end)
-    
     if symbol_data is None:
         return []
     symbols.extend(symbol_data)
@@ -109,17 +83,9 @@ def get_new():
             hold = True
         else:
             symbols.extend(symbol_data)
-    print(len(symbols))
+            time.sleep(1)
     return sorted(set(symbols))
     
-def get_rsi():
-    """ Get RSI symbols"""
-    r = 1
-    end = "https://finviz.com/screener.ashx?v=111&f=an_recom_buybetter,geo_usa,sec_technology,sh_avgvol_o1000,sh_price_o5,ta_rsi_os40&ft=4&r={}".format(r)
-    symbol_data = get_symbol_data(end)
-    if symbol_data is None:
-        return None
-    return symbol_data
 
 def individual( symbol):
     """Return information on an individual symbol"""
@@ -143,13 +109,3 @@ def individual( symbol):
             if tp == '</b>':
                 tp = 1
     return float(recom), float(tp)
-    
-def get_all_symbols():
-    """Return all symbols"""
-    symbols = []
-    for an_recom in data_sources:
-        for tp in data_sources[an_recom]['tp']:
-            log('INFO', 'Getting data for {an_recom} and target price {tp}'.format(an_recom=an_recom, tp=tp))
-            for symbol in get_symbols(cap='microover', target=tp, sh_price=1, an_recom=an_recom):
-                symbols.append(symbol)
-    return set(sorted(symbols))

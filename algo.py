@@ -1,4 +1,5 @@
 import json
+from symtable import Symbol
 import rh_lib as r
 import log_lib
 import yahoo_lib as y
@@ -9,6 +10,7 @@ import datetime
 import os
 import time
 import concurrent.futures
+import zacks_lib
 
 
 log = log_lib.write_log
@@ -79,17 +81,17 @@ def fourth():
     data = json.loads(yahoo_symbols.read())
     total_symbols = len(data.keys())
     log('INFO', 'Evaluating {} symbols'.format(total_symbols))
-    t_data = t.new(data.keys(),total_symbols,min_per=30)
-    for symbol in list(data.keys()):
-        if symbol not in t_data.keys():
-            del data[symbol]
-    for symbol in t_data.keys():
-        data[symbol]['tipranks_smart_score'] = t_data[symbol]['tipranks_smart_score']
-    with open('data/tiprank_data_{}.json'.format(today), 'w') as f:
+    zacks_data = zacks_lib.batch(data.keys())
+    print(zacks_data)
+    for symbol in zacks_lib.batch(data.keys()):
+        print(symbol)
+        exit()
+    with open('data/zacks_data_{}.json'.format(today), 'w') as f:
         json.dump(data, f)
 
+
 def fifth():
-    tiprank_data = open('data/tiprank_data_{}.json'.format(today), 'r')
+    tiprank_data = open('data/zacks_data_{}.json'.format(today), 'r')
     data = json.loads(tiprank_data.read())
     for symbol in data.keys():
         finviz_recom, finviz_tp = finviz.individual(symbol)
@@ -102,11 +104,13 @@ def fifth():
     with open('data/final_data_{}.json'.format(today), 'w') as f:
         json.dump(data, f)
 
+
 def sixth(data=None):
     if data is None:
         data = open('data/final_data_{}.json'.format(today), 'r')
     data = json.loads(data.read())
     log('INFO', 'There are {} buys'.format(len(data.keys())))
+    print(json.dumps(data))
     open_positions = d.get_all_open()
     for symbol in data.keys():
         if symbol not in open_positions:
@@ -150,10 +154,10 @@ def seven(data=None):
             return False
             
 
-#start()
-#second()
-#third()
-#fourth()
+start()
+second()
+third()
+fourth()
 #fifth()
-sixth()
-seven()
+#sixth()
+#seven()
